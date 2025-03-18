@@ -1,0 +1,148 @@
+body {
+    background-color: #00008B; /* 深藍色背景 */
+}
+
+.container {
+    background-color: #FFFFFF; /* 白色方框 */
+    margin: 20px; /* 靠近背景周圍 */
+    padding: 20px;
+    border-radius: 10px; /* 圓角設計 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 陰影更細 */
+    position: relative;
+    width: calc(100% - 40px); /* 寬度比背景小 */
+    height: calc(100vh - 40px); /* 高度比背景小 */
+    box-sizing: border-box;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%; /* 中間挖空的寬度 */
+    height: 98%; /* 中間挖空的高度 */
+    background-color: #00008B; /* 與背景相同的顏色 */
+    border-radius: 10px; /* 與外框一致的圓角 */
+}
+
+.title {
+    position: absolute; /* 改為絕對定位，限制在白色方框內 */
+    top: 20px;
+    left: 20px; /* 調整位置 */
+    font-size: 36px; /* 調整字體大小 */
+    font-weight: bold; /* 粗體字 */
+    color: #FFFFFF; /* 改回白色文字，確保清晰可見 */
+    text-shadow: none; /* 移除文字陰影 */
+    z-index: 10;
+}
+
+.subtitle {
+    position: absolute;
+    top: 70px; /* 標題下方 */
+    left: 20px;
+    font-size: 18px; /* 副標題字體大小 */
+    color: #FFFFFF; /* 改回白色文字，確保清晰可見 */
+}
+
+.line {
+    width: 200px; /* 加長橘線的寬度 */
+    height: 4px; /* 短橘線的高度 */
+    background-color: orange; /* 橘色 */
+    margin: 10px 0; /* 與上下元素的間距 */
+    position: absolute;
+    top: 100px; /* 副標題下方 */
+    left: 20px; /* 與副標題對齊 */
+}
+
+.description {
+    position: absolute;
+    top: 120px; /* 短橘線下方 */
+    left: 20px;
+    font-size: 16px; /* 描述文字字體大小 */
+    color: #FFFFFF; /* 白色文字 */
+    line-height: 1.5; /* 行距 */
+    max-width: calc(100% - 40px); /* 限制寬度，避免超出白色框框 */
+}
+
+.buttons {
+    position: absolute;
+    top: 200px; /* 描述文字下方 */
+    left: 20px;
+    display: flex;
+    gap: 10px; /* 按鈕之間的間距 */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF; /* 白色文字 */
+    background-color: #FF4500; /* 橘色背景 */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FF6347; /* 按鈕懸停時的顏色 */
+}
+
+.portfolio-button {
+    background-color: #FFFFFF; /* 白色實心 */
+    color: #00008B; /* 深藍色文字 */
+    border: 2px solid orange; /* 橘色框框 */
+}
+
+.portfolio-button:hover {
+    background-color: orange; /* 懸停時變為橘色實心 */
+    color: #FFFFFF; /* 懸停時文字變為白色 */
+}
+
+.skills-title {
+    position: absolute;
+    top: 280px; /* 按鈕下方 */
+    left: 20px;
+    color: #FFFFFF; /* 白色文字 */
+    display: flex;
+    align-items: center; /* 垂直對齊標題與按鈕 */
+    gap: 10px; /* 標題與按鈕之間的間距 */
+}
+
+.skills-title h2 {
+    font-size: 24px; /* Skills 標題字體大小 */
+    margin: 0;
+}
+
+.skills-title h3 {
+    font-size: 18px; /* 專業技能副標題字體大小 */
+    margin: 5px 0 0 0;
+}
+
+.skills-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF; /* 白色文字 */
+    background-color: orange; /* 橘色背景 */
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skills-button:hover {
+    background-color: #FF6347; /* 懸停時背景變為較深的橘色 */
+    transform: scale(1.1); /* 懸停時放大效果 */
+}
+
+.skills-list {
+    position: absolute;
+    top: 340px; /* 專業技能標題下方 */
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 每行四個 */
+    gap: 10px; /* 元素之間的間距 */
+    color: #FFFFFF; /* 白色文字 */
+    font-size: 14px; /* 文字大小 */
+    line-height: 1.5; /* 行距 */
+}
